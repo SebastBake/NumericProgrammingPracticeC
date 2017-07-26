@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+#PDFs are too big for github
+*.pdf
+
 # Object files
 *.o
 *.ko
