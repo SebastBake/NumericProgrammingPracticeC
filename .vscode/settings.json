@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "assert.h": "c",
+        "stdio.h": "c",
+        "_null.h": "c",
+        "bst.h": "c",
+        "stdlib.h": "c",
+        "float.h": "c"
+    }
+}
