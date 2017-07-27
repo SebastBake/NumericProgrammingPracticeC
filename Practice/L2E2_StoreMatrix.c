@@ -1,3 +1,18 @@
+/*
+Written by Sebastian Baker as practice for Unimelb - Numerical Programming for Engineers
+================================================================================================
+Lecture 2, Ex2
+Write a program that can read n×m matrix of ints from stdin with the following format:
+n = 2
+m = 4
+4  812 94 24
+42 43  31 5
+use dynamic memory allocation to store the matrix
+output largest and smallest value in each column
+Sample data ﬁle: matrix.txt
+================================================================================================
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,6 +46,7 @@ int main(int argv, char *argc[]) {
 
 	processMatrixFile(filename);
 
+	printf("done!\n");
 	return 0;
 }
 
@@ -93,8 +109,8 @@ double * parseRow(FILE *fp, int fileRow, int matrixCols) {
 void printMinMaxInEachCol(matrix_t matrix) {
 	
 	double colMin, colMax, matrixEntry;
+
 	int row = 0, col=0;
-	
 	for (col=0; col<matrix.cols; col++) {
 		
 		colMin = DBL_MAX, colMax = -DBL_MAX;
@@ -111,14 +127,11 @@ void printMinMaxInEachCol(matrix_t matrix) {
 
 void deleteMatrix(matrix_t * matrix) {
 
-	// delete matrix data
 	int fileRow=0;
 	for (fileRow=0; fileRow<matrix->rows; fileRow++) {
 		free(matrix->data[fileRow]);
 	}
 	free(matrix->data);
-
-	// delete matrix struct
 	free(matrix);
 }
 
