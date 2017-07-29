@@ -6,6 +6,7 @@
         "bst.h": "c",
         "stdlib.h": "c",
         "float.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "_sigaltstack.h": "c"
     }
 }

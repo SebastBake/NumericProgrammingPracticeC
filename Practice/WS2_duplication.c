@@ -9,6 +9,8 @@
 #include <string.h>
 #include <stdint.h>
 
+#define NULL_BYTE '\0'
+
 char* string_dupe(const char* s)
 {
     // (0) validate input
@@ -16,15 +18,26 @@ char* string_dupe(const char* s)
         printf("error string_dupe: input ptr is NULL.\n");
         exit(EXIT_FAILURE);
     }
+
     // (1) determine length
+    int stringLength = 0;
+    while (s[stringLength] != NULL_BYTE) {
+        stringLength++;
+    }
 
     // (2) allocate len + one extra for the 0 byte
+    char * newStr = (char*)malloc(sizeof(char)*(stringLength+1));
 
     // (3) copy data
+    int i=0;
+    for (i=0; i<stringLength; i++) {
+        newStr[i] = s[i];
+    }
 
     // (4) terminate the new string with 0
+    newStr[stringLength] = NULL_BYTE;
 
-    return str;
+    return newStr;
 }
 
 int main(int argc, char const* argv[])
@@ -41,6 +54,5 @@ int main(int argc, char const* argv[])
     }
 
     free(str);
-
     return 0;
 }
