@@ -5,6 +5,7 @@
         "_null.h": "c",
         "bst.h": "c",
         "stdlib.h": "c",
-        "float.h": "c"
+        "float.h": "c",
+        "string.h": "c"
     }
 }
