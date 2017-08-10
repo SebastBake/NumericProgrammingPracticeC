@@ -105,17 +105,18 @@ double ** parseMatrixData(FILE *fp, int totalRows, int totalCols) {
 		}
 
 		// add new row into array of rows
-		arrayOfPtrsToRows[fileRow] =  newRow;
+		arrayOfPtrsToRows[fileRow] = newRow;
 	}
 	return arrayOfPtrsToRows;
 }
 
 void printMinMaxInEachCol(matrix_t matrix) {
 	
-	double colMin=DBL_MAX, colMax=-DBL_MAX;
+	double colMin = DBL_MAX;
+	double colMax = -DBL_MAX;
 	int row=0, col=0;
 
-	for (col=0; col<matrix.cols; col++) {
+	for (col = 0; col < matrix.cols; col++) {
 
 		colMin = DBL_MAX, colMax = -DBL_MAX;
 		for (row=0; row<matrix.rows; row++) {
